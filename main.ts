@@ -1,10 +1,9 @@
-maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 20)
-basic.pause(1000)
-maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 20)
-maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 0)
-basic.pause(1000)
-maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 0)
-maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 20)
-basic.pause(1000)
-maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 20)
-basic.pause(1000)
+let distancia = 0
+basic.forever(function () {
+    maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 10)
+    distancia = maqueen.Ultrasonic(PingUnit.Centimeters)
+    basic.showNumber(distancia)
+    if (distancia < 15) {
+        maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 0)
+    }
+})
