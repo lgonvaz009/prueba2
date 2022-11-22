@@ -1,8 +1,10 @@
-input.onSound(DetectedSound.Loud, function () {
-    for (let index = 0; index < 4; index++) {
-        basic.showIcon(IconNames.Heart)
-        basic.showIcon(IconNames.SmallHeart)
-    }
-    basic.clearScreen()
-})
-input.setSoundThreshold(SoundThreshold.Loud, 43)
+maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, 20)
+basic.pause(1000)
+maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 20)
+maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 0)
+basic.pause(1000)
+maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 0)
+maqueen.motorRun(maqueen.Motors.M2, maqueen.Dir.CW, 20)
+basic.pause(1000)
+maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CCW, 20)
+basic.pause(1000)
